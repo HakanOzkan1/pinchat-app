@@ -19,10 +19,10 @@ app.use("/api/users",userRoute)
 app.use("/api/pins",pinRoute)
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.resolve(__dirname, "./pinchat-frontend/build")));
+    app.use(express.static(path.resolve(__dirname, "./client/build")));
   
     app.get("*", function (request, response) {
-    response.sendFile(path.resolve(__dirname, "./pinchat-frontend/build", "index.html"));
+    response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
   });
   }
 

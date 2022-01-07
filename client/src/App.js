@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get("https://hidden-badlands-01805.herokuapp.com/pins");
+        const res = await axios.get("https://hidden-badlands-01805.herokuapp.com/api/pins");
         setPins(res.data);
       } catch (err) {
         console.log(err);
@@ -64,7 +64,7 @@ function App() {
       long: newPlace.long,
     };
     try {
-      const res = await axios.post("https://hidden-badlands-01805.herokuapp.com/pins", newPin);
+      const res = await axios.post("https://hidden-badlands-01805.herokuapp.com/api/pins", newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {

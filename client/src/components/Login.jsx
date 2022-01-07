@@ -17,7 +17,7 @@ export default function Login({setShowLogin,myStorage,setCurrentUser}) {
             password:passwordRef.current.value,
         };
         try{
-            const res = await axious.post("/users/login", user);
+            const res = await axious.post("https://hidden-badlands-01805.herokuapp.com/api/users/login", user);
             myStorage.setItem("user",res.data.username);
             setCurrentUser(res.data.username);
             setShowLogin(false);

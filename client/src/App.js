@@ -7,6 +7,8 @@ import { format } from "timeago.js";
 import Register from "./components/Register";
 import Login from "./components/Login";
 
+
+
 function App() {
   const myStorage = window.localStorage;
   const [currentUser, setCurrentUser] = useState(myStorage.getItem("user"));
@@ -19,6 +21,7 @@ function App() {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showLoginError, setShowLoginError] = useState(false);
+  
 
 
   const [viewport, setViewport] = useState({

@@ -65,6 +65,8 @@ input::placeholder,textarea::placeholder{
 
 .logout{
     background-color: red;
+    width: 85px;
+    height: 40px;
 }
 
 .login{

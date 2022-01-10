@@ -20,7 +20,7 @@ export default function Register({setShowRegister}) {
             password:passwordRef.current.value,
         };
         try{
-            await axious.post("https://hidden-badlands-01805.herokuapp.com/api/users/register", newUser);
+            await axious.post(process.env.REACT_APP_REGISTER, newUser);
             setSuccess(true);
             setError(false);
         }catch(err){

@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get("https://hidden-badlands-01805.herokuapp.com/api/pins");
+        const res = await axios.get(process.env.REACT_APP_PINS);
         setPins(res.data);
       } catch (err) {
         console.log(err);
@@ -67,7 +67,7 @@ function App() {
       long: newPlace.long,
     };
     try {
-      const res = await axios.post("https://hidden-badlands-01805.herokuapp.com/api/pins", newPin);
+      const res = await axios.post(process.env.REACT_APP_PINS, newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {
@@ -85,7 +85,7 @@ function App() {
     <div className="App">
         <ReactMapGL
           {...viewport}
-          mapboxApiAccessToken={"pk.eyJ1IjoiaGFrbzEiLCJhIjoiY2t4ZGxjM2FnMXBsdTJ1bzE0ZDV5OTk3ZSJ9.FqhkGAv9cXCFKIL2CXZGtA"}
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
           onViewportChange={(nextViewport) => setViewport(nextViewport)}
           mapStyle="mapbox://styles/hako1/ckxe6sm910n6w14mxjxmia3vi"
           onDblClick={handleAddClick}

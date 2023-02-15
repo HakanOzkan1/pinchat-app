@@ -12,7 +12,7 @@ dotenv.config();
 
 app.use(express.json())
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect("mongodb+srv://hakan:12345@teacherbase.8ji0l.mongodb.net/pin?retryWrites=true&w=majority")
 .then(()=> {
     console.log("MongoDB Connected")
 }).catch(err=> console.log(err))
